@@ -1,0 +1,37 @@
+
+  <tr>
+    <td>
+    <form action="__SELF__" method="post" enctype='multipart/form-data'>
+    <input type='hidden' name='role_id' value='{$roleinfo.role_id}' />
+    <table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce" id='general-tab-show'>
+    <tr><td colspan='100'>当前正在给【{$roleinfo.role_name}】分配权限</td></tr>
+    <foreach name='auth_infoA' item='v'>
+      <tr>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE6">
+        <div align="left"><span class="STYLE19">
+        {$v.auth_name}
+<input type='checkbox' name='authid[]' value='{$v.auth_id}' 
+  <in name='v.auth_id' value='$roleinfo.role_auth_ids'>checked='checked'</in>
+/>
+        </span></div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19">
+          &nbsp;
+          <foreach name='auth_infoB' item='vv'>
+          <eq name='vv.auth_pid' value='$v.auth_id'>
+          <div style="width:200px;float:left;">{$vv.auth_name}
+<input type='checkbox' name='authid[]' value='{$vv.auth_id}' 
+  <in name='vv.auth_id' value='$roleinfo.role_auth_ids'>checked='checked'</in>
+/>
+          </div>
+          </eq>
+          </foreach>
+        </td>
+      </tr>
+    </foreach>
+    <tr><td colspan='100' bgcolor="#FFFFFF" align="center"><input type='submit' value='分配权限'></td></tr>
+    </table>
+
+    </form>
+    </td>
+  </tr>
+

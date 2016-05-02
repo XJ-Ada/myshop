@@ -1,0 +1,48 @@
+<tr>
+  <td>
+  <form action="__SELF__" method="post" enctype='multipart/form-data'>
+  <table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#a8c7ce" id='general-tab-show'>
+    <tr>
+      <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="right"><span class="STYLE19">属性名称：</span></div></td>
+      <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="left">
+      <input type="text" name="attr_name" />
+      </div></td>
+    </tr>    
+    <tr>
+      <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="right"><span class="STYLE19">类型：</span></div></td>
+      <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="left">
+      <select name='type_id'>
+        <option value='0'>-请选择-</option>
+        <foreach name='typeinfo' item='v'>
+          <option value='{$v.type_id}'>{$v.type_name}</option>
+        </foreach>
+      </select>
+      </div></td>
+    </tr>
+    <tr>
+      <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="right"><span class="STYLE19">单选多选：</span></div></td>
+      <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="left">
+      <input type="radio" name="attr_sel" value='0' checked='checked'/>单选
+      <input type="radio" name="attr_sel" value='1' />多选
+      </div></td>
+    </tr>    
+    <tr>
+      <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="right"><span class="STYLE19">录入方式：</span></div></td>
+      <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="left">
+      <input type="radio" name="attr_write" value='0'  checked='checked'/>手工录入
+      <input type="radio" name="attr_write" value='1' />从列表中选择
+      </div></td>
+    </tr>    
+    <tr>
+      <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="right"><span class="STYLE19">多选项目可选值：</span></div></td>
+      <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="left">
+      <textarea style='width:360px;height:130px;' name='attr_vals'></textarea>
+      </div><span style='color:gray;'>多个值彼此通过","逗号分隔</span></td>
+    </tr>
+    
+    <tr><td colspan='100' bgcolor="#FFFFFF" align="center"><input type='submit' value='添加属性'></td></tr>
+  </table>
+
+  </form>
+  </td>
+</tr>
